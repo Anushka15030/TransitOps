@@ -51,3 +51,13 @@ class Trip(Base, BaseModel):
     vehicle: Mapped["Vehicle"] = relationship(back_populates="trips")
     driver: Mapped["Driver"] = relationship(back_populates="trips")
     bookings: Mapped[list["Booking"]] = relationship(back_populates="trip")
+
+    # app/models/trip.py — change the default
+    status: Mapped[TripStatus] = mapped_column(
+    PG_ENUM(TripStatus, name="trip_status_enum", create_type=False),
+    default=TripStatus.DRAFT,
+    nullable=False,
+    index=True,
+)
+
+ 

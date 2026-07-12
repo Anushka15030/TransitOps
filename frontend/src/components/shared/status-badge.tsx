@@ -47,4 +47,13 @@ const STATUS_CONFIG: Record<string, { label: string; variant: StatusVariant }> =
   draft: { label: "Draft", variant: "neutral" },
   dispatched: { label: "Dispatched", variant: "info" },
   // "scheduled"/"ongoing" entries removed — trip statuses are now draft/dispatched
+
+// src/components/shared/status-badge.tsx
+const STATUS_CONFIG: Record<string, { label: string; variant: StatusVariant }> = {
+  active: { label: "Active", variant: "success" },
+  maintenance: { label: "In Shop", variant: "warning" },  // relabeled for maintenance context
+  inactive: { label: "Inactive", variant: "neutral" },
+  open: { label: "Open", variant: "warning" },
+  closed: { label: "Closed", variant: "success" },
+  // ...rest unchanged
 };

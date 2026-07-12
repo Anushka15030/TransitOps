@@ -55,3 +55,8 @@ class BookingStatus(str, enum.Enum):
 class MaintenanceStatus(str, enum.Enum):
     OPEN = "open"
     CLOSED = "closed"
+class TripStatus(str, enum.Enum):
+    DRAFT = "draft"
+    DISPATCHED = "dispatched"
+    COMPLETED = "completed"
+    CANCELLED = "cancelled"
