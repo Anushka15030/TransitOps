@@ -21,3 +21,8 @@ api_router = APIRouter()
 api_router.include_router(auth.router)
 api_router.include_router(vehicles.router)
 api_router.include_router(drivers.router)
+
+# app/api/v1/router.py
+from app.api.v1 import auth, drivers, maintenance, routes, trips, vehicles
+
+api_router.include_router(maintenance.router)

@@ -22,3 +22,4 @@ from app.models.route_stop import RouteStop   # noqa: E402, F401
 from app.models.trip import Trip          # noqa: E402, F401
 from app.models.booking import Booking    # noqa: E402, F401
 from app.models.refresh_token import RefreshToken  # noqa: E402, F401
+from app.models.maintenance_record import MaintenanceRecord  # noqa: E402, F401
