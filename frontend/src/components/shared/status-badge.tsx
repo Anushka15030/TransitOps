@@ -41,6 +41,12 @@ export function StatusBadge({ status }: { status: string }) {
     </span>
   );
 }
+// src/components/shared/status-badge.tsx — update the map
+const STATUS_CONFIG: Record<string, { label: string; variant: StatusVariant }> = {
+  // ...existing entries...
+  draft: { label: "Draft", variant: "neutral" },
+  dispatched: { label: "Dispatched", variant: "info" },
+  // "scheduled"/"ongoing" entries removed — trip statuses are now draft/dispatched
 
 // src/components/shared/status-badge.tsx
 const STATUS_CONFIG: Record<string, { label: string; variant: StatusVariant }> = {
