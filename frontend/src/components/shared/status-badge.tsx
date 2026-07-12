@@ -41,3 +41,13 @@ export function StatusBadge({ status }: { status: string }) {
     </span>
   );
 }
+
+// src/components/shared/status-badge.tsx
+const STATUS_CONFIG: Record<string, { label: string; variant: StatusVariant }> = {
+  active: { label: "Active", variant: "success" },
+  maintenance: { label: "In Shop", variant: "warning" },  // relabeled for maintenance context
+  inactive: { label: "Inactive", variant: "neutral" },
+  open: { label: "Open", variant: "warning" },
+  closed: { label: "Closed", variant: "success" },
+  // ...rest unchanged
+};
