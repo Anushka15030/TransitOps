@@ -51,3 +51,9 @@ class BookingStatus(str, enum.Enum):
     CONFIRMED = "confirmed"
     CANCELLED = "cancelled"
     COMPLETED = "completed"
+
+class TripStatus(str, enum.Enum):
+    DRAFT = "draft"
+    DISPATCHED = "dispatched"
+    COMPLETED = "completed"
+    CANCELLED = "cancelled"

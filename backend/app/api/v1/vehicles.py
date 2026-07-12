@@ -78,3 +78,15 @@ def update_vehicle(vehicle_id: uuid.UUID, payload: VehicleUpdateRequest, db: Ses
 def delete_vehicle(vehicle_id: uuid.UUID, db: Session = Depends(get_db)):
     VehicleService(db).delete(vehicle_id)
     return None
+# app/api/v1/vehicles.py — add
+@router.get(
+    "/options/active",
+    response_model=list[VehicleResponse],
+    dependencies=[Depends(require_permission(Permission.VEHICLE_READ))],
+)
+def list_active_vehicle_options(db: Session = Depends(get_db)):
+    from app.models.enums import VehicleStatus
+    vehicles = VehicleRepository(db).search_and_filter(
+        search=None, vehicle_type=None, status=VehicleStatus.ACTIVE, offset=0, limit=100
+    )[0]
+    return [VehicleResponse.model_validate(v) for v in vehicles]
